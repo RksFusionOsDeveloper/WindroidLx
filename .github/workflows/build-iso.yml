@@ -21,12 +21,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Debian live-build tools
+        env:
+          DEBIAN_FRONTEND: noninteractive
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends live-build debootstrap xorriso squashfs-tools
 
       - name: Build Fusion OS live ISO
-        run: sudo ./build.sh
+        run: |
+          sed -i 's/\r$//' build.sh
+          chmod +x build.sh
+          sudo ./build.sh
 
       - name: Verify ISO output
         run: |
