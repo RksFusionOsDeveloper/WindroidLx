@@ -1,0 +1,30 @@
+# Fusion OS lightweight desktop
+live-boot
+live-config
+live-config-systemd
+xfce4
+xfce4-terminal
+thunar
+network-manager
+network-manager-gnome
+sudo
+firefox-esr
+pavucontrol
+gvfs
+gvfs-backends
+udisks2
+policykit-1
+fonts-noto
+fonts-noto-color-emoji
+firmware-linux
+firmware-linux-nonfree
+firmware-iwlwifi
+firmware-realtek
+
+# Windows compatibility
+wine
+wine64
+fonts-wine
+
+# Graphical installer framework (requires installer configuration and testing)
+calamares

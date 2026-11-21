@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+# Small prototype marker; replace with the final Fusion OS artwork and branding.
+install -d /etc/fusion-os
+cat > /etc/fusion-os/release <<'EOF'
+NAME="Fusion OS Prototype"
+BASE="Debian 13 (trixie)"
+ARCH="amd64"
+EDITION="Lightweight XFCE live"
+EOF
