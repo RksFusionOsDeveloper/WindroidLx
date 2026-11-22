@@ -10,15 +10,13 @@ for c in lb debootstrap xorriso mksquashfs; do
 done
 lb clean --purge || true
 lb config \
-  --mode debian \
   --distribution trixie \
-  --architectures amd64 \
-  --binary-images iso-hybrid \
-  --archive-areas "main contrib non-free-firmware" \
-  --debian-installer false \
-  --bootappend-live "boot=live components quiet splash" \
-  --iso-application "Fusion OS Prototype" \
-  --iso-volume "FUSION_OS"
+  --mirror-bootstrap "http://ftp.debian.org/debian/" \
+  --mirror-chroot "http://ftp.debian.org/debian/" \
+  --mirror-chroot-security "http://security.debian.org/debian-security/" \
+  --mirror-binary "http://ftp.debian.org/debian/" \
+  --mirror-binary-security "http://security.debian.org/debian-security/" \
+  --security true
 lb build
 echo
 echo "Build complete. ISO files:"
